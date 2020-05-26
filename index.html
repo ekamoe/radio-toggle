@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Radio Toggle</title>
+    <!--VIEWPORT MIGHT NEED ADJUSTMENTS-->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <!--using newer version 1.10.1-->
+    <script src="https://api.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.js"></script>
+    <link
+      href="https://api.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!--HEADER, MENU, TEXT TK:-->
+    <!--testing watts layer toggle 
+      <nav id="menu"></nav>-->
+    <div id="map"></div>
+    <!--testing radio button menu-->
+    <div id="menu">
+      <input
+        id="ck9m6v5md1yho1ipk1gyvac0y"
+        type="radio"
+        name="rtoggle"
+        value="dynamic two layers"
+        checked="checked"
+      />
+      <label for="ck9m6v5md1yho1ipk1gyvac0y">dynamic two layers</label>
+      <input
+        id="ckalq36jf42fs1ikalz03l13t"
+        type="radio"
+        name="rtoggle"
+        value="data sufficiency only"
+      />
+      <label for="ckalq36jf42fs1ikalz03l13t">data sufficiency only</label>
+      <input
+        id="ckalq15l941ri1jns3gygtcv3"
+        type="radio"
+        name="rtoggle"
+        value="probability only"
+      />
+      <label for="ckalq15l941ri1jns3gygtcv3">probability only</label>
+    </div>
+    <!--testing legend tutorial-->
+    <div class="map-overlay" id="info-box">
+      <h2>Radio Toggle Prototype</h2>
+      <div id="pd"><p>Grab JS from here</p></div>
+    </div>
+    <div class="map-overlay" id="legend"></div>
+    <script src="js/app.js"></script>
+    <!--NEED THIS HTML5 TEMPLATE?
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+-->
+  </body>
+</html>
