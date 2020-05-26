@@ -28,8 +28,36 @@ for (var i = 0; i < inputs.length; i++) {
   inputs[i].onclick = switchLayer;
 }
 
-/* callback function template
-map.on('load', function() {
-// how do i define the text inside the map-overlay?
+/* Mapbox code for callback function*/
+map.on("load", function () {
+  // Mapbox code for legend
+  var layers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
+  var colors = [
+    "#fde725",
+    "#bcdf27",
+    "#7ad251",
+    "#43bf70",
+    "#22a884",
+    "#20908d",
+    "#29788e",
+    "#345f8d",
+    "#404387",
+    "#482475",
+    "#440154",
+  ];
+
+  for (i = 0; i < layers.length; i++) {
+    var layer = layers[i];
+    var color = colors[i];
+    var item = document.createElement("div");
+    var key = document.createElement("span");
+    key.className = "legend-key";
+    key.style.backgroundColor = color;
+
+    var value = document.createElement("span");
+    value.innerHTML = layer;
+    item.appendChild(key);
+    item.appendChild(value);
+    legend.appendChild(item);
+  }
 });
-*/
