@@ -95,18 +95,3 @@ p {
   height: 10px;
   margin-right: 5px;
 }
-
-/*coordinates revealed with mouseclick*/
-#info {
-  display: block;
-  position: relative;
-  margin: 0px auto;
-  width: 28%;
-  padding: 10px;
-  border: none;
-  border-radius: 3px;
-  font-size: 12px;
-  text-align: center;
-  color: #222;
-  background: rgba(255, 255, 255, 0.8);
-}
