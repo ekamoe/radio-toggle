@@ -77,10 +77,3 @@ map.on("load", function () {
     secondLegend.appendChild(item);
   }
 });
-
-//  Display lat-lng on mouse click
-map.on("click", function (e) {
-  document.getElementById("info").innerHTML =
-    // e.lngLat is the longitude, latitude geographical position of the event
-    JSON.stringify(e.lngLat.wrap());
-});
