@@ -23,57 +23,58 @@ for (var i = 0; i < inputs.length; i++) {
   inputs[i].onclick = switchLayer;
 }
 
-// Mapbox code for zoom and rotation controls
-map.addControl(new mapboxgl.NavigationControl());
-
-// Mapbox code for legend overlays
+// Upon map load, add nav control and descriptive pop-up
 map.on("load", function () {
-  // gcc layer
-  var layers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
-  var colors = [
-    "#fde725",
-    "#fde725",
-    "#b5de2c",
-    "#6cce59",
-    "#35b779",
-    "#1e9e89",
-    "#25838e",
-    "#31688e",
-    "#3e4a89",
-    "#472878",
-    "#440154",
-  ];
-  // ssp layer
-  var secondLayers = ["0-0.13", "0.14-0.28", "0.29-0.42", "0.43-1"];
-  var secondColors = ["#f0f921", "#ef7b51", "#99149f", "#0d0887"];
+  // zoom and rotation controls on upper right
+  map.addControl(new mapboxgl.NavigationControl());
 
-  // loop to populate legends
-  for (i = 0; i < layers.length; i++) {
-    var layer = layers[i];
-    var color = colors[i];
-    var item = document.createElement("div");
-    var key = document.createElement("span");
-    key.className = "legend-key";
-    key.style.backgroundColor = color;
-
-    var value = document.createElement("span");
-    value.innerHTML = layer;
-    item.appendChild(key);
-    item.appendChild(value);
-    legend.appendChild(item);
-  }
-  for (i = 0; i < secondLayers.length; i++) {
-    var secondLayer = secondLayers[i];
-    var secondColor = secondColors[i];
-    var item = document.createElement("div");
-    var key = document.createElement("span");
-    key.className = "legend-second-key";
-    key.style.backgroundColor = secondColor;
-
-    var value = document.createElement("span");
-    value.innerHTML = secondLayer; // is this the problem?
-    item.appendChild(key);
-    item.appendChild(value);
-    secondLegend.appendChild(item);
-  }
+  // descriptive popup on upper left
+  var popupText =
+    "<br>" +
+    "<br>" +
+    "<br>" +
+    "<b>" +
+    "This map visualizes data for the week of July 6, 2018, as modeled by the " +
+    "<a href='https://www.birds.cornell.edu/home'>" +
+    "Cornell Lab of Ornithology " +
+    "</a>" +
+    "<br>" +
+    "for " +
+    "<a href='https://ebird.org/science/status-and-trends'>" +
+    "eBird Status and Trends" +
+    "</a>" +
+    "." +
+    "</b>" +
+    "<br>" +
+    "<br>" +
+    "<b>" +
+    "Click the radio buttons above to change the map view: " +
+    "</b>" +
+    "<u>" +
+    "Dynamic two layers " +
+    "</u>" +
+    "will first show a relative measure of " +
+    "<b>" +
+    "data sufficiency " +
+    "</b>" +
+    "to build abundance models. As you zoom closer, the map will switch to reveal the " +
+    "<b>" +
+    "probability layer" +
+    "</b>" +
+    ", which shows the probability of receiving an eBird checklist from a given pixel during one week. " +
+    "<u>" +
+    "Click the other buttons to see one layer at a time." +
+    "</u>" +
+    "<br>" +
+    "<br>" +
+    "<b>" +
+    "Please use caution when birding in new locations. Not all areas will be accessible.";
+  new mapboxgl.Popup({
+    closeOnClick: false,
+    anchor: top,
+  })
+    .setLngLat([-20, 35]) // CENTER OF MAP
+    .setHTML(popupText)
+    .setMaxWidth("650px")
+    .addTo(map);
 });
