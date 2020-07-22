@@ -32,7 +32,6 @@ map.on("load", function () {
   var popupText =
     "<br>" +
     "<br>" +
-    "<br>" +
     "<b>" +
     "This map visualizes data for the week of July 6, 2018, as modeled by the " +
     "<a href='https://www.birds.cornell.edu/home'>" +
@@ -47,12 +46,10 @@ map.on("load", function () {
     "</b>" +
     "<br>" +
     "<br>" +
-    "<b>" +
     "Click the radio buttons above to change the map view: " +
-    "</b>" +
-    "<u>" +
+    "<b>" +
     "Dynamic two layers " +
-    "</u>" +
+    "</b>" +
     "will first show a relative measure of " +
     "<b>" +
     "data sufficiency " +
@@ -62,9 +59,9 @@ map.on("load", function () {
     "probability layer" +
     "</b>" +
     ", which shows the probability of receiving an eBird checklist from a given pixel during one week. " +
-    "<u>" +
+    "<i>" +
     "Click the other buttons to see one layer at a time." +
-    "</u>" +
+    "</i>" +
     "<br>" +
     "<br>" +
     "<b>" +
